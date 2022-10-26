@@ -1,0 +1,89 @@
+[{
+  "_id": {
+    "$oid": "6352afc463fe9569145d8def"
+  },
+  "timestamp": "10/10/2022, 16:35:40",
+  "name": "Perfume Los Haroldos",
+  "description": "Marca Avon - 80ml",
+  "price": 1280,
+  "picture": "http://localhost:8082/Perfume_4.jpg",
+  "code": "AR236",
+  "stock": 100
+},{
+  "_id": {
+    "$oid": "6352afc463fe9569145d8df0"
+  },
+  "timestamp": "10/10/2022, 16:31:03",
+  "name": "Perfume New New York",
+  "description": "Marca Cañon -75ml",
+  "price": 1700,
+  "picture": "http://localhost:8082/Perfume_6.jpg",
+  "code": "AM232",
+  "stock": 100
+},{
+  "_id": {
+    "$oid": "6352afc463fe9569145d8df1"
+  },
+  "timestamp": "12/10/2022, 12:53:34",
+  "name": "Perfume Carioca",
+  "description": "Marca Brasil - 85ml",
+  "price": 2300,
+  "picture": "http://localhost:8082/Perfume_2.jpg",
+  "code": "AP123",
+  "stock": 100
+},{
+  "_id": {
+    "$oid": "6352afc463fe9569145d8df2"
+  },
+  "timestamp": "12/10/2022, 12:53:34",
+  "name": "Perfume Albatros",
+  "description": "Marca Conejo - 85ml",
+  "price": 2860,
+  "picture": "http://localhost:8082/Perfume_3.jpg",
+  "code": "AP125",
+  "stock": 100
+},{
+  "_id": {
+    "$oid": "6352afc463fe9569145d8df3"
+  },
+  "timestamp": "12/10/2022, 12:53:34",
+  "name": "Perfume Manaos",
+  "description": "Marca Cualquiera - 90ml",
+  "price": 3350,
+  "picture": "http://localhost:8082/Perfume_5.jpg",
+  "code": "AP229",
+  "stock": 100
+},{
+  "_id": {
+    "$oid": "6352afc463fe9569145d8df4"
+  },
+  "timestamp": "12/10/2022, 12:53:34",
+  "name": "Perfume Pepsi",
+  "description": "Marca Pepsico - 100ml",
+  "price": 4320,
+  "picture": "http://localhost:8082/Perfume_4.jpg",
+  "code": "AP190",
+  "stock": 0
+},{
+  "_id": {
+    "$oid": "6352afc463fe9569145d8df5"
+  },
+  "timestamp": "12/10/2022, 12:53:34",
+  "name": "Perfume Perejil",
+  "description": "Marca Verdum - 50ml",
+  "price": 4990,
+  "picture": "http://localhost:8082/Perfume_6.jpg",
+  "code": "AP123",
+  "stock": 0
+},{
+  "_id": {
+    "$oid": "6352cb5b63fe9569145d8e00"
+  },
+  "timestamp": "21/10/2022, 19:34:29",
+  "name": "Perfume Distrito 9",
+  "description": "Marca Carvon - 90ml",
+  "price": 2500,
+  "picture": "http://localhost:8082/Perfume_1.jpg",
+  "code": "AA335",
+  "stock": 100
+}]

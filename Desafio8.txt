@@ -1,0 +1,687 @@
+//  -------- CREAR BASE DE DATOS ECOMMERCE ----------------
+use ecommerce
+'switched to db ecommerce'
+// ---------------- LISTAR BASES DE DATOS ------------------------
+show databases
+admin    40.00 KiB
+config   72.00 KiB
+ecommerce  0.00 KiB
+local    72.00 KiB
+sistema  72.00 KiB
+// ---------- CREAR COLLECTION PRODUCTOS --------------------
+ecommerce >db.createCollection("productos")
+{ ok: 1 }
+// ---------- CREAR COLLECTION MENSAJES ------------------------
+ecommerce >db.createCollection("mensajes")
+{ ok: 1 }
+
+// #1 and 2 ---INSERT DOCUMENTS IN COLL PRODUCTOS --------------    
+ecommerce >db.productos.insertMany([{
+    "timestamp": "12/10/2022, 08:49:17",
+    "name": "Perfume Champions",
+    "description": "Marca Carol Fair - 90ml",
+    "price": 125,
+    "picture": "http://localhost:8082/Perfume_1.jpg",
+    "code": "AA125"
+  },
+  {
+    "timestamp": "29/9/2022, 09:14:59",
+    "name": "Perfume Scandalete",
+    "description": "Marca Vicky - 100ml",
+    "price": 580,
+    "picture": "http://localhost:8082/Perfume_2.jpg",
+    "code": "AA126"
+  },
+  {
+    "timestamp": "29/9/2022, 09:24:59",
+    "name": "Perfume Te fuiste a la B",
+    "description": "Marca Abon - 100ml",
+    "price": 900,
+    "picture": "http://localhost:8082/Perfume_3.jpg",
+    "code": "AA127"
+  },
+  {
+    "timestamp": "10/10/2022, 16:35:40",
+    "name": "Perfume Los Haroldos",
+    "description": "Marca Avon - 80ml",
+    "price": 1280,
+    "picture": "http://localhost:8082/Perfume_4.jpg",
+    "code": "AR236"
+  },
+  {
+    "timestamp": "10/10/2022, 16:31:03",
+    "name": "Perfume New New York",
+    "description": "Marca Cañon -75ml",
+    "price": 1700,
+    "picture": "http://localhost:8082/Perfume_6.jpg",
+    "code": "AM232"
+  },
+  {
+    "timestamp": "12/10/2022, 12:53:34",
+    "name": "Perfume Carioca",
+    "description": "Marca Brasil - 85ml",
+    "price": 2300,
+    "picture": "http://localhost:8082/Perfume_2.jpg",
+    "code": "AP123"
+  },
+  {
+    "timestamp": "12/10/2022, 12:53:34",
+    "name": "Perfume Albatros",
+    "description": "Marca Conejo - 85ml",
+    "price": 2860,
+    "picture": "http://localhost:8082/Perfume_3.jpg",
+    "code": "AP125"
+  },
+  {
+    "timestamp": "12/10/2022, 12:53:34",
+    "name": "Perfume Manaos",
+    "description": "Marca Cualquiera - 90ml",
+    "price": 3350,
+    "picture": "http://localhost:8082/Perfume_5.jpg",
+    "code": "AP229"
+  },
+  {
+    "timestamp": "12/10/2022, 12:53:34",
+    "name": "Perfume Pepsi",
+    "description": "Marca Pepsico - 100ml",
+    "price": 4320,
+    "picture": "http://localhost:8082/Perfume_4.jpg",
+    "code": "AP190"
+  },
+  {
+    "timestamp": "12/10/2022, 12:53:34",
+    "name": "Perfume Perejil",
+    "description": "Marca Verdum - 50ml",
+    "price": 4990,
+    "picture": "http://localhost:8082/Perfume_6.jpg",
+    "code": "AP123"
+  }])
+{ acknowledged: true,
+  insertedIds: 
+   { '0': ObjectId("6352afc463fe9569145d8dec"),
+     '1': ObjectId("6352afc463fe9569145d8ded"),
+     '2': ObjectId("6352afc463fe9569145d8dee"),
+     '3': ObjectId("6352afc463fe9569145d8def"),
+     '4': ObjectId("6352afc463fe9569145d8df0"),
+     '5': ObjectId("6352afc463fe9569145d8df1"),
+     '6': ObjectId("6352afc463fe9569145d8df2"),
+     '7': ObjectId("6352afc463fe9569145d8df3"),
+     '8': ObjectId("6352afc463fe9569145d8df4"),
+     '9': ObjectId("6352afc463fe9569145d8df5") } }
+
+// #1----------INSERT DOCUMENTS IN COLL MENSAJES --------------    
+ecommerce >db.mensajes.insertMany([{
+    "user": "peter@gmail.com",
+    "message": "Te fuiste a la B?",
+    "date": "29/9/2022, 09:04:59"
+  },
+  {
+    "user": "peterKantropus@gmail.com",
+    "message": "Me parece que no esta funcionando esto",
+    "date": "29/9/2022, 09:05:59"
+  },
+  {
+    "user": "manolo@hotmail.com",
+    "message": "Noooooo, no de nuevo decía",
+    "date": "29/9/2022, 09:06:59"
+  },
+  {
+    "user": "german@gmail.com",
+    "message": "Creo que lo logre!!!!!",
+    "date": "04/10/2022, 16:18:10"
+  },
+  {
+    "user": "g-remal@gmail.com",
+    "message": "siiiiiiii te fuiste a la B",
+    "date": "04/10/2022, 17:08:27"
+  },
+  {
+    "user": "ejemplo@mail.com",
+    "message": "Funciona!!! jajaja o jijiji",
+    "date": "05/10/2022, 10:43:30"
+  },
+  {
+    "user": "ejemplo@mail.com",
+    "message": "Funciona!!! Que grnade que soyyyyy",
+    "date": "05/10/2022, 10:56:30"
+  },
+  {
+    "user": "hernan@gmail.com",
+    "message": "Que es lo que hay que poner aqui??",
+    "date": "05/10/2022, 14:36:52"
+  },
+  {
+    "user": "banana@hotmail.com",
+    "message": "Listo, lo dije",
+    "date": "05/10/2022, 14:36:52"
+  },
+  {
+    "user": "manzana@boolean.com",
+    "message": "Manzanas coloradas.....",
+    "date": "05/10/2022, 14:36:52"
+  }])
+{ acknowledged: true,
+  insertedIds: 
+   { '0': ObjectId("6352b97063fe9569145d8df6"),
+     '1': ObjectId("6352b97063fe9569145d8df7"),
+     '2': ObjectId("6352b97063fe9569145d8df8"),
+     '3': ObjectId("6352b97063fe9569145d8df9"),
+     '4': ObjectId("6352b97063fe9569145d8dfa"),
+     '5': ObjectId("6352b97063fe9569145d8dfb"),
+     '6': ObjectId("6352b97063fe9569145d8dfc"),
+     '7': ObjectId("6352b97063fe9569145d8dfd"),
+     '8': ObjectId("6352b97063fe9569145d8dfe"),
+     '9': ObjectId("6352b97063fe9569145d8dff") } }
+
+// #3----------LISTAR DOCUMENTS IN COLL PRODUCTOS --------------    
+ecommerce >db.productos.find()
+{ _id: ObjectId("6352afc463fe9569145d8dec"),
+  timestamp: '12/10/2022, 08:49:17',
+  name: 'Perfume Champions',
+  description: 'Marca Carol Fair - 90ml',
+  price: 125,
+  picture: 'http://localhost:8082/Perfume_1.jpg',
+  code: 'AA125'}
+{ _id: ObjectId("6352afc463fe9569145d8ded"),
+  timestamp: '29/9/2022, 09:14:59',
+  name: 'Perfume Scandalete',
+  description: 'Marca Vicky - 100ml',
+  price: 580,
+  picture: 'http://localhost:8082/Perfume_2.jpg',
+  code: 'AA126'}
+{ _id: ObjectId("6352afc463fe9569145d8dee"),
+  timestamp: '29/9/2022, 09:24:59',
+  name: 'Perfume Te fuiste a la B',
+  description: 'Marca Abon - 100ml',
+  price: 900,
+  picture: 'http://localhost:8082/Perfume_3.jpg',
+  code: 'AA127'}
+{ _id: ObjectId("6352afc463fe9569145d8def"),
+  timestamp: '10/10/2022, 16:35:40',
+  name: 'Perfume Los Haroldos',
+  description: 'Marca Avon - 80ml',
+  price: 1280,
+  picture: 'http://localhost:8082/Perfume_4.jpg',
+  code: 'AR236'}
+{ _id: ObjectId("6352afc463fe9569145d8df0"),
+  timestamp: '10/10/2022, 16:31:03',
+  name: 'Perfume New New York',
+  description: 'Marca Cañon -75ml',
+  price: 1700,
+  picture: 'http://localhost:8082/Perfume_6.jpg',
+  code: 'AM232'}
+{ _id: ObjectId("6352afc463fe9569145d8df1"),
+  timestamp: '12/10/2022, 12:53:34',
+  name: 'Perfume Carioca',
+  description: 'Marca Brasil - 85ml',
+  price: 2300,
+  picture: 'http://localhost:8082/Perfume_2.jpg',
+  code: 'AP123'}
+{ _id: ObjectId("6352afc463fe9569145d8df2"),
+  timestamp: '12/10/2022, 12:53:34',
+  name: 'Perfume Albatros',
+  description: 'Marca Conejo - 85ml',
+  price: 2860,
+  picture: 'http://localhost:8082/Perfume_3.jpg',
+  code: 'AP125'}
+{ _id: ObjectId("6352afc463fe9569145d8df3"),
+  timestamp: '12/10/2022, 12:53:34',
+  name: 'Perfume Manaos',
+  description: 'Marca Cualquiera - 90ml',
+  price: 3350,
+  picture: 'http://localhost:8082/Perfume_5.jpg',
+  code: 'AP229'}
+{ _id: ObjectId("6352afc463fe9569145d8df4"),
+  timestamp: '12/10/2022, 12:53:34',
+  name: 'Perfume Pepsi',
+  description: 'Marca Pepsico - 100ml',
+  price: 4320,
+  picture: 'http://localhost:8082/Perfume_4.jpg',
+  code: 'AP190'}
+{ _id: ObjectId("6352afc463fe9569145d8df5"),
+  timestamp: '12/10/2022, 12:53:34',
+  name: 'Perfume Perejil',
+  description: 'Marca Verdum - 50ml',
+  price: 4990,
+  picture: 'http://localhost:8082/Perfume_6.jpg',
+  code: 'AP123'}
+
+// #3----------LISTAR DOCUMENTS IN COLL MENSAJES --------------
+ecommerce > db.mensajes.find()
+{ _id: ObjectId("6352b97063fe9569145d8df6"),
+  user: 'peter@gmail.com',
+  message: 'Te fuiste a la B?',
+  date: '29/9/2022, 09:04:59' }
+{ _id: ObjectId("6352b97063fe9569145d8df7"),
+  user: 'peterKantropus@gmail.com',
+  message: 'Me parece que no esta funcionando esto',
+  date: '29/9/2022, 09:05:59' }
+{ _id: ObjectId("6352b97063fe9569145d8df8"),
+  user: 'manolo@hotmail.com',
+  message: 'Noooooo, no de nuevo decía',
+  date: '29/9/2022, 09:06:59' }
+{ _id: ObjectId("6352b97063fe9569145d8df9"),
+  user: 'german@gmail.com',
+  message: 'Creo que lo logre!!!!!',
+  date: '04/10/2022, 16:18:10' }
+{ _id: ObjectId("6352b97063fe9569145d8dfa"),
+  user: 'g-remal@gmail.com',
+  message: 'siiiiiiii te fuiste a la B',
+  date: '04/10/2022, 17:08:27' }
+{ _id: ObjectId("6352b97063fe9569145d8dfb"),
+  user: 'ejemplo@mail.com',
+  message: 'Funciona!!! jajaja o jijiji',
+  date: '05/10/2022, 10:43:30' }
+{ _id: ObjectId("6352b97063fe9569145d8dfc"),
+  user: 'ejemplo@mail.com',
+  message: 'Funciona!!! Que grnade que soyyyyy',
+  date: '05/10/2022, 10:56:30' }
+{ _id: ObjectId("6352b97063fe9569145d8dfd"),
+  user: 'hernan@gmail.com',
+  message: 'Que es lo que hay que poner aqui??',
+  date: '05/10/2022, 14:36:52' }
+{ _id: ObjectId("6352b97063fe9569145d8dfe"),
+  user: 'banana@hotmail.com',
+  message: 'Listo, lo dije',
+  date: '05/10/2022, 14:36:52' }
+{ _id: ObjectId("6352b97063fe9569145d8dff"),
+  user: 'manzana@boolean.com',
+  message: 'Manzanas coloradas.....',
+  date: '05/10/2022, 14:36:52' }
+
+// #4----------QUANTITY DOCUMENTS IN COLL PRODUCTOS --------------
+ecommerce > db.productos.estimatedDocumentCount()
+10
+
+// #4----------QUANTITY DOCUMENTS IN COLL MENSAJES --------------
+ecommerce > db.mensajes.estimatedDocumentCount()
+10
+
+// #5_a---------INSERT ONE PRODUCT INTO COLL PRODUCTOS --------------
+ecommerce >db.productos.insertOne({
+    "timestamp": "21/10/2022, 19:34:29",
+    "name": "Perfume Distrito 9",
+    "description": "Marca Carvon - 90ml",
+    "price": 2500,
+    "picture": "http://localhost:8082/Perfume_1.jpg",
+    "code": "AA335"
+  })
+{ acknowledged: true,
+  insertedId: ObjectId("6352cb5b63fe9569145d8e00") }
+
+// #5_b_i ---------SHOW PRODUCTS LESS THAN PRICE $1000 --------------
+ecommerce >db.productos.find({"price": {$lt: 1000}})
+{ _id: ObjectId("6352afc463fe9569145d8dec"),
+  timestamp: '12/10/2022, 08:49:17',
+  name: 'Perfume Champions',
+  description: 'Marca Carol Fair - 90ml',
+  price: 125,
+  picture: 'http://localhost:8082/Perfume_1.jpg',
+  code: 'AA125'}
+{ _id: ObjectId("6352afc463fe9569145d8ded"),
+  timestamp: '29/9/2022, 09:14:59',
+  name: 'Perfume Scandalete',
+  description: 'Marca Vicky - 100ml',
+  price: 580,
+  picture: 'http://localhost:8082/Perfume_2.jpg',
+  code: 'AA126'}
+{ _id: ObjectId("6352afc463fe9569145d8dee"),
+  timestamp: '29/9/2022, 09:24:59',
+  name: 'Perfume Te fuiste a la B',
+  description: 'Marca Abon - 100ml',
+  price: 900,
+  picture: 'http://localhost:8082/Perfume_3.jpg',
+  code: 'AA127'}
+
+#5_b_ii ---------SHOW PRODUCTS BETWEEN PRICE$1000 & $3000 --------------
+ecommerce >db.productos.find( { "price": { $gt: 1000, $lt: 3000 } } )
+{ _id: ObjectId("6352afc463fe9569145d8def"),
+  timestamp: '10/10/2022, 16:35:40',
+  name: 'Perfume Los Haroldos',
+  description: 'Marca Avon - 80ml',
+  price: 1280,
+  picture: 'http://localhost:8082/Perfume_4.jpg',
+  code: 'AR236'}
+{ _id: ObjectId("6352afc463fe9569145d8df0"),
+  timestamp: '10/10/2022, 16:31:03',
+  name: 'Perfume New New York',
+  description: 'Marca Cañon -75ml',
+  price: 1700,
+  picture: 'http://localhost:8082/Perfume_6.jpg',
+  code: 'AM232'}
+{ _id: ObjectId("6352afc463fe9569145d8df1"),
+  timestamp: '12/10/2022, 12:53:34',
+  name: 'Perfume Carioca',
+  description: 'Marca Brasil - 85ml',
+  price: 2300,
+  picture: 'http://localhost:8082/Perfume_2.jpg',
+  code: 'AP123'}
+{ _id: ObjectId("6352afc463fe9569145d8df2"),
+  timestamp: '12/10/2022, 12:53:34',
+  name: 'Perfume Albatros',
+  description: 'Marca Conejo - 85ml',
+  price: 2860,
+  picture: 'http://localhost:8082/Perfume_3.jpg',
+  code: 'AP125'}
+{ _id: ObjectId("6352cb5b63fe9569145d8e00"),
+  timestamp: '21/10/2022, 19:34:29',
+  name: 'Perfume Distrito 9',
+  description: 'Marca Carvon - 90ml',
+  price: 2500,
+  picture: 'http://localhost:8082/Perfume_1.jpg',
+  code: 'AA335'}
+
+#5_b_iii ---------SHOW PRODUCTS GREATER THAN PRICE  $3000 --------------
+ecommerce >db.productos.find({"price": {$gt: 3000}})
+{ _id: ObjectId("6352afc463fe9569145d8df3"),
+  timestamp: '12/10/2022, 12:53:34',
+  name: 'Perfume Manaos',
+  description: 'Marca Cualquiera - 90ml',
+  price: 3350,
+  picture: 'http://localhost:8082/Perfume_5.jpg',
+  code: 'AP229' }
+{ _id: ObjectId("6352afc463fe9569145d8df4"),
+  timestamp: '12/10/2022, 12:53:34',
+  name: 'Perfume Pepsi',
+  description: 'Marca Pepsico - 100ml',
+  price: 4320,
+  picture: 'http://localhost:8082/Perfume_4.jpg',
+  code: 'AP190' }
+{ _id: ObjectId("6352afc463fe9569145d8df5"),
+  timestamp: '12/10/2022, 12:53:34',
+  name: 'Perfume Perejil',
+  description: 'Marca Verdum - 50ml',
+  price: 4990,
+  picture: 'http://localhost:8082/Perfume_6.jpg',
+  code: 'AP123' }
+
+#5_b_iv ---------SHOW 3° CHEAPEST PRODUCT  --------------
+ecommerce >db.productos.find({price: {$lt: 3000} }, {_id:0, timestamp:0, description:0, picture:0, code:0 } ).skip(2).limit(1).sort({price:-1})
+{ name: 'Perfume Carioca', price: 2300 }
+
+
+#5_c ---------UPDATE PRODUCTS ADDING STOCK KEY, VALUE 100  --------------
+ecommerce >db.productos.updateMany({}, {$set: { "stock": 100} }, { upsert: true } )
+{ acknowledged: true,
+  insertedId: null,
+  matchedCount: 11,
+  modifiedCount: 11,
+  upsertedCount: 0 }
+ecommerce >db.productos.find()
+{ _id: ObjectId("6352afc463fe9569145d8dec"),
+  timestamp: '12/10/2022, 08:49:17',
+  name: 'Perfume Champions',
+  description: 'Marca Carol Fair - 90ml',
+  price: 125,
+  picture: 'http://localhost:8082/Perfume_1.jpg',
+  code: 'AA125',
+  stock: 100 }
+{ _id: ObjectId("6352afc463fe9569145d8ded"),
+  timestamp: '29/9/2022, 09:14:59',
+  name: 'Perfume Scandalete',
+  description: 'Marca Vicky - 100ml',
+  price: 580,
+  picture: 'http://localhost:8082/Perfume_2.jpg',
+  code: 'AA126',
+  stock: 100 }
+{ _id: ObjectId("6352afc463fe9569145d8dee"),
+  timestamp: '29/9/2022, 09:24:59',
+  name: 'Perfume Te fuiste a la B',
+  description: 'Marca Abon - 100ml',
+  price: 900,
+  picture: 'http://localhost:8082/Perfume_3.jpg',
+  code: 'AA127',
+  stock: 100 }
+{ _id: ObjectId("6352afc463fe9569145d8def"),
+  timestamp: '10/10/2022, 16:35:40',
+  name: 'Perfume Los Haroldos',
+  description: 'Marca Avon - 80ml',
+  price: 1280,
+  picture: 'http://localhost:8082/Perfume_4.jpg',
+  code: 'AR236',
+  stock: 100 }
+{ _id: ObjectId("6352afc463fe9569145d8df0"),
+  timestamp: '10/10/2022, 16:31:03',
+  name: 'Perfume New New York',
+  description: 'Marca Cañon -75ml',
+  price: 1700,
+  picture: 'http://localhost:8082/Perfume_6.jpg',
+  code: 'AM232',
+  stock: 100 }
+{ _id: ObjectId("6352afc463fe9569145d8df1"),
+  timestamp: '12/10/2022, 12:53:34',
+  name: 'Perfume Carioca',
+  description: 'Marca Brasil - 85ml',
+  price: 2300,
+  picture: 'http://localhost:8082/Perfume_2.jpg',
+  code: 'AP123',
+  stock: 100 }
+{ _id: ObjectId("6352afc463fe9569145d8df2"),
+  timestamp: '12/10/2022, 12:53:34',
+  name: 'Perfume Albatros',
+  description: 'Marca Conejo - 85ml',
+  price: 2860,
+  picture: 'http://localhost:8082/Perfume_3.jpg',
+  code: 'AP125',
+  stock: 100 }
+{ _id: ObjectId("6352afc463fe9569145d8df3"),
+  timestamp: '12/10/2022, 12:53:34',
+  name: 'Perfume Manaos',
+  description: 'Marca Cualquiera - 90ml',
+  price: 3350,
+  picture: 'http://localhost:8082/Perfume_5.jpg',
+  code: 'AP229',
+  stock: 100 }
+{ _id: ObjectId("6352afc463fe9569145d8df4"),
+  timestamp: '12/10/2022, 12:53:34',
+  name: 'Perfume Pepsi',
+  description: 'Marca Pepsico - 100ml',
+  price: 4320,
+  picture: 'http://localhost:8082/Perfume_4.jpg',
+  code: 'AP190',
+  stock: 100 }
+{ _id: ObjectId("6352afc463fe9569145d8df5"),
+  timestamp: '12/10/2022, 12:53:34',
+  name: 'Perfume Perejil',
+  description: 'Marca Verdum - 50ml',
+  price: 4990,
+  picture: 'http://localhost:8082/Perfume_6.jpg',
+  code: 'AP123',
+  stock: 100 }
+{ _id: ObjectId("6352cb5b63fe9569145d8e00"),
+  timestamp: '21/10/2022, 19:34:29',
+  name: 'Perfume Distrito 9',
+  description: 'Marca Carvon - 90ml',
+  price: 2500,
+  picture: 'http://localhost:8082/Perfume_1.jpg',
+  code: 'AA335',
+  stock: 100 }
+
+
+#5_d ---------UPDATE PRODUCTS STOCK - VALUE 0 PRICE GREATER THAN $4000   --------------
+ecommerce >db.productos.updateMany({price: {$gt: 4000}}, {$set: { "stock": 0} } )
+{ acknowledged: true,
+  insertedId: null,
+  matchedCount: 2,
+  modifiedCount: 2,
+  upsertedCount: 0 }
+
+ecommerce >db.productos.find()
+{ _id: ObjectId("6352afc463fe9569145d8dec"),
+  timestamp: '12/10/2022, 08:49:17',
+  name: 'Perfume Champions',
+  description: 'Marca Carol Fair - 90ml',
+  price: 125,
+  picture: 'http://localhost:8082/Perfume_1.jpg',
+  code: 'AA125',
+  stock: 100 }
+{ _id: ObjectId("6352afc463fe9569145d8ded"),
+  timestamp: '29/9/2022, 09:14:59',
+  name: 'Perfume Scandalete',
+  description: 'Marca Vicky - 100ml',
+  price: 580,
+  picture: 'http://localhost:8082/Perfume_2.jpg',
+  code: 'AA126',
+  stock: 100 }
+{ _id: ObjectId("6352afc463fe9569145d8dee"),
+  timestamp: '29/9/2022, 09:24:59',
+  name: 'Perfume Te fuiste a la B',
+  description: 'Marca Abon - 100ml',
+  price: 900,
+  picture: 'http://localhost:8082/Perfume_3.jpg',
+  code: 'AA127',
+  stock: 100 }
+{ _id: ObjectId("6352afc463fe9569145d8def"),
+  timestamp: '10/10/2022, 16:35:40',
+  name: 'Perfume Los Haroldos',
+  description: 'Marca Avon - 80ml',
+  price: 1280,
+  picture: 'http://localhost:8082/Perfume_4.jpg',
+  code: 'AR236',
+  stock: 100 }
+{ _id: ObjectId("6352afc463fe9569145d8df0"),
+  timestamp: '10/10/2022, 16:31:03',
+  name: 'Perfume New New York',
+  description: 'Marca Cañon -75ml',
+  price: 1700,
+  picture: 'http://localhost:8082/Perfume_6.jpg',
+  code: 'AM232',
+  stock: 100 }
+{ _id: ObjectId("6352afc463fe9569145d8df1"),
+  timestamp: '12/10/2022, 12:53:34',
+  name: 'Perfume Carioca',
+  description: 'Marca Brasil - 85ml',
+  price: 2300,
+  picture: 'http://localhost:8082/Perfume_2.jpg',
+  code: 'AP123',
+  stock: 100 }
+{ _id: ObjectId("6352afc463fe9569145d8df2"),
+  timestamp: '12/10/2022, 12:53:34',
+  name: 'Perfume Albatros',
+  description: 'Marca Conejo - 85ml',
+  price: 2860,
+  picture: 'http://localhost:8082/Perfume_3.jpg',
+  code: 'AP125',
+  stock: 100 }
+{ _id: ObjectId("6352afc463fe9569145d8df3"),
+  timestamp: '12/10/2022, 12:53:34',
+  name: 'Perfume Manaos',
+  description: 'Marca Cualquiera - 90ml',
+  price: 3350,
+  picture: 'http://localhost:8082/Perfume_5.jpg',
+  code: 'AP229',
+  stock: 100 }
+{ _id: ObjectId("6352afc463fe9569145d8df4"),
+  timestamp: '12/10/2022, 12:53:34',
+  name: 'Perfume Pepsi',
+  description: 'Marca Pepsico - 100ml',
+  price: 4320,
+  picture: 'http://localhost:8082/Perfume_4.jpg',
+  code: 'AP190',
+  stock: 0 }
+{ _id: ObjectId("6352afc463fe9569145d8df5"),
+  timestamp: '12/10/2022, 12:53:34',
+  name: 'Perfume Perejil',
+  description: 'Marca Verdum - 50ml',
+  price: 4990,
+  picture: 'http://localhost:8082/Perfume_6.jpg',
+  code: 'AP123',
+  stock: 0 }
+{ _id: ObjectId("6352cb5b63fe9569145d8e00"),
+  timestamp: '21/10/2022, 19:34:29',
+  name: 'Perfume Distrito 9',
+  description: 'Marca Carvon - 90ml',
+  price: 2500,
+  picture: 'http://localhost:8082/Perfume_1.jpg',
+  code: 'AA335',
+  stock: 100 }
+
+
+#5_e ---------DELETE ALL PRODUCTS PRICE LESS THAN $1000   --------------
+ecommerce >db.productos.deleteMany({price: {$lt: 1000}} )
+{ acknowledged: true, deletedCount: 3 }
+ecommerce >db.productos.find()
+{ _id: ObjectId("6352afc463fe9569145d8def"),
+  timestamp: '10/10/2022, 16:35:40',
+  name: 'Perfume Los Haroldos',
+  description: 'Marca Avon - 80ml',
+  price: 1280,
+  picture: 'http://localhost:8082/Perfume_4.jpg',
+  code: 'AR236',
+  stock: 100 }
+{ _id: ObjectId("6352afc463fe9569145d8df0"),
+  timestamp: '10/10/2022, 16:31:03',
+  name: 'Perfume New New York',
+  description: 'Marca Cañon -75ml',
+  price: 1700,
+  picture: 'http://localhost:8082/Perfume_6.jpg',
+  code: 'AM232',
+  stock: 100 }
+{ _id: ObjectId("6352afc463fe9569145d8df1"),
+  timestamp: '12/10/2022, 12:53:34',
+  name: 'Perfume Carioca',
+  description: 'Marca Brasil - 85ml',
+  price: 2300,
+  picture: 'http://localhost:8082/Perfume_2.jpg',
+  code: 'AP123',
+  stock: 100 }
+{ _id: ObjectId("6352afc463fe9569145d8df2"),
+  timestamp: '12/10/2022, 12:53:34',
+  name: 'Perfume Albatros',
+  description: 'Marca Conejo - 85ml',
+  price: 2860,
+  picture: 'http://localhost:8082/Perfume_3.jpg',
+  code: 'AP125',
+  stock: 100 }
+{ _id: ObjectId("6352afc463fe9569145d8df3"),
+  timestamp: '12/10/2022, 12:53:34',
+  name: 'Perfume Manaos',
+  description: 'Marca Cualquiera - 90ml',
+  price: 3350,
+  picture: 'http://localhost:8082/Perfume_5.jpg',
+  code: 'AP229',
+  stock: 100 }
+{ _id: ObjectId("6352afc463fe9569145d8df4"),
+  timestamp: '12/10/2022, 12:53:34',
+  name: 'Perfume Pepsi',
+  description: 'Marca Pepsico - 100ml',
+  price: 4320,
+  picture: 'http://localhost:8082/Perfume_4.jpg',
+  code: 'AP190',
+  stock: 0 }
+{ _id: ObjectId("6352afc463fe9569145d8df5"),
+  timestamp: '12/10/2022, 12:53:34',
+  name: 'Perfume Perejil',
+  description: 'Marca Verdum - 50ml',
+  price: 4990,
+  picture: 'http://localhost:8082/Perfume_6.jpg',
+  code: 'AP123',
+  stock: 0 }
+{ _id: ObjectId("6352cb5b63fe9569145d8e00"),
+  timestamp: '21/10/2022, 19:34:29',
+  name: 'Perfume Distrito 9',
+  description: 'Marca Carvon - 90ml',
+  price: 2500,
+  picture: 'http://localhost:8082/Perfume_1.jpg',
+  code: 'AA335',
+  stock: 100 }
+
+
+#6 ---------DELETE ALL PRODUCTS PRICE LESS THAN $1000   --------------
+ecommerce >use admin
+'switched to db admin'
+admin >db.createUser({ user: "pepe", pwd:"asd456", roles:[{ role: "read", db: "ecommerce"  }]} )
+{ ok: 1 }
+
+admin >show users
+[ { _id: 'admin.pepe',
+    userId: UUID("e114df82-aaf4-41c3-a848-194585810838"),
+    user: 'pepe',
+    db: 'admin',
+    roles: [ { role: 'read', db: 'ecommerce' } ],
+    mechanisms: [ 'SCRAM-SHA-1', 'SCRAM-SHA-256' ] } ]
+
+
+
+
+
